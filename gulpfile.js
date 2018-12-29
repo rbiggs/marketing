@@ -58,18 +58,6 @@ gulp.task('build:js', function(done) {
     })
 })
 
-gulp.task('bbbbbbuild:css', function(done) {
-  gulp.src('./src/css/*.css')
-    .pipe(sourcemaps.init())
-    .pipe(cssnano({ advanced: true, aggressiveMerging: false }))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('./dist/css'))
-  gulp.src('./dist/css/*.css')
-    .pipe(gzip({ extension: 'gzip' }))
-    .pipe(gulp.dest('./Fdist/css'))
-  done()
-})
-
 gulp.task('move-images', function(done) {
   gulp.src(['./src/images/*', './src/images/**/*'])
     .pipe(gulp.dest('./dist/images'))

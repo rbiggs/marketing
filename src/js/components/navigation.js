@@ -12,17 +12,17 @@ const links = [
   {
     name: "About",
     title: "About Ideas Never Cease",
-    url: "/about"
+    url: "#/about"
   },
   {
     name: "Projects",
     title: "Check out the Projects that Ideas Never Cease is working on!",
-    url: "/projects"
+    url: "#/projects"
   },
   {
     name: "Contact",
     title: "Have a question? Get the contact info for Ideas Never Cease here",
-    url: "/contact"
+    url: "#/contact"
   }
 ];
 
@@ -42,7 +42,7 @@ function RenderNavigation({ state }) {
 
   const listItems = links.map(link => ( <a
       class={`header__navigation__item ${state === link.name.toLowerCase() ? 'active' : ''}`}
-      href={`#${link.url}`}
+      href={link.url}
       title={link.title}
     >{link.name}</a>)
   );
